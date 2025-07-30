@@ -103,6 +103,11 @@ const serviceAreas = [
   { name: 'Ridgewood', href: '/locations/ridgewood' },
   { name: 'Mahwah', href: '/locations/mahwah' },
   { name: 'Upper Saddle River', href: '/locations/upper-saddle-river' },
+  { name: 'Allendale', href: '/locations/allendale' },
+  { name: 'Wyckoff', href: '/locations/wyckoff' },
+  { name: 'Teaneck', href: '/locations/teaneck' },
+  { name: 'Englewood', href: '/locations/englewood' },
+  { name: 'Fair Lawn', href: '/locations/fair-lawn' },
   { name: 'View All Locations', href: '/locations', className: 'font-semibold text-primary-600' },
 ];
 
@@ -116,12 +121,12 @@ const clientServices = [
 ];
 
 const additionalServices = [
-  { name: 'Countertop Installation', href: '/services/countertop-installation', icon: HomeIcon },
-  { name: 'Tile & Flooring', href: '/services/tile-flooring', icon: HomeIcon },
-  { name: 'Home Additions', href: '/services/home-additions', icon: BuildingOfficeIcon },
-  { name: 'Basement Finishing', href: '/services/basement-finishing', icon: HomeIcon },
-  { name: 'Interior Remodeling', href: '/services/interior-remodeling', icon: HomeIcon },
-  { name: 'View All Services', href: '/services', icon: ShieldCheckIcon },
+  { name: 'Risk Assessment Tool', href: '/tools/risk-assessment', icon: ShieldCheckIcon },
+  { name: 'Premium Calculator', href: '/tools/premium-calculator', icon: CurrencyDollarIcon },
+  { name: 'Coverage Checklist', href: '/tools/coverage-checklist', icon: ClipboardDocumentListIcon },
+  { name: 'Certificate Generator', href: '/tools/certificate-generator', icon: DocumentTextIcon },
+  { name: 'Construction Resources', href: '/resources/construction-insurance-guide', icon: BuildingOfficeIcon },
+  { name: 'View All Tools', href: '/resources', icon: ShieldCheckIcon },
 ];
 
 // Consolidated insurance categories
