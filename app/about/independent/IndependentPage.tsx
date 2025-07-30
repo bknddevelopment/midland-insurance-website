@@ -13,9 +13,9 @@ import {
   CurrencyDollarIcon,
   ChartBarIcon,
   BuildingOfficeIcon,
-  HandshakeIcon,
   ArrowRightIcon,
   CheckCircleIcon,
+  HandRaisedIcon,
 } from '@heroicons/react/24/outline';
 import InsuranceAgencySchema from '@/components/seo/InsuranceAgencySchema';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
@@ -298,7 +298,7 @@ export default function IndependentPage() {
         {/* CTA Section */}
         <section className="py-20 bg-primary-600">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <HandshakeIcon className="h-16 w-16 text-white/80 mx-auto mb-6" />
+            <HandRaisedIcon className="h-16 w-16 text-white/80 mx-auto mb-6" />
             <h2 className="text-4xl font-bold text-white mb-6">
               Experience the Independent Difference
             </h2>

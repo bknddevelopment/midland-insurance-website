@@ -13,7 +13,8 @@ import {
   ClockIcon,
   CreditCardIcon,
   ClipboardDocumentListIcon,
-  ArrowRightIcon
+  ArrowRightIcon,
+  CurrencyDollarIcon
 } from '@heroicons/react/24/outline';
 import { COMPANY_INFO, formatPhoneForTel } from '@/lib/utils/constants';
 import { 
@@ -108,6 +109,11 @@ const serviceAreas = [
   { name: 'Teaneck', href: '/locations/teaneck' },
   { name: 'Englewood', href: '/locations/englewood' },
   { name: 'Fair Lawn', href: '/locations/fair-lawn' },
+  { name: 'Garfield', href: '/locations/garfield' },
+  { name: 'Lodi', href: '/locations/lodi' },
+  { name: 'Lyndhurst', href: '/locations/lyndhurst' },
+  { name: 'Ramsey', href: '/locations/ramsey' },
+  { name: 'Westwood', href: '/locations/westwood' },
   { name: 'View All Locations', href: '/locations', className: 'font-semibold text-primary-600' },
 ];
 
