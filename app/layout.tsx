@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import InsuranceAgencySchema from '@/components/seo/InsuranceAgencySchema';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -71,44 +72,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#1e40af" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
-        {/* Local Business Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "InsuranceAgency",
-              "name": "Midland Associates Insurance Services LLC",
-              "image": "https://www.midlandinsurance.biz/logo.png",
-              "url": "https://www.midlandinsurance.biz",
-              "telephone": "(201) 812-2184",
-              "email": "Service@midlandinsurance.biz",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "345 RT 17 STE 22",
-                "addressLocality": "Upper Saddle River",
-                "addressRegion": "NJ",
-                "postalCode": "07458",
-                "addressCountry": "US"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 41.0584,
-                "longitude": -74.1048
-              },
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "09:00",
-                "closes": "17:00"
-              },
-              "sameAs": [
-                "https://www.facebook.com/MidlandInsurance",
-                "https://www.linkedin.com/company/midland-associates-insurance"
-              ]
-            })
-          }}
-        />
+        {/* SEO Schema Markup */}
+        <InsuranceAgencySchema />
       </head>
       <body className={inter.className}>
         {children}

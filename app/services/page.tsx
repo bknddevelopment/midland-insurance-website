@@ -419,51 +419,6 @@ export default function Services() {
       {/* 9. Divider */}
       <Divider type="dark-to-white" />
 
-      {/* 10. Home Improvement Services Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Additional Services We Offer
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Beyond our core specialties, we provide a range of home improvement services to complete your renovation project.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {homeImprovementServices.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Link
-                  href={service.href}
-                  className="block card hover:shadow-xl transition-shadow duration-300 h-full"
-                >
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
-                      <service.icon className="h-8 w-8 text-primary-600" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600">
-                      {service.description}
-                    </p>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 11. Divider */}
-      <Divider type="white-to-dark" />
-
       {/* 12. FAQ Section (Always Last Dark Section Before Final White) */}
       <section className="py-20 bg-slate-900 circle-pattern">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

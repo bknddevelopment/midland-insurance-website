@@ -1,0 +1,39 @@
+# Robots.txt for Midland Associates Insurance Services
+# https://midlandinsurance.biz
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Specific crawler instructions
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 0
+
+User-agent: Slurp
+Crawl-delay: 0
+
+# Disallow access to private/admin areas (if any exist)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+# Allow important resources
+Allow: /images/
+Allow: /photos/
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap location
+Sitemap: https://midlandinsurance.biz/sitemap.xml
+
+# Construction-specific pages to prioritize
+# These comments help understand our site structure
+# /services/construction-types/
+# /services/trade-specific/
+# /locations/
+# /blog/
+# /resources/
