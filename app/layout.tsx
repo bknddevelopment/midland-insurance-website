@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+// import { Inter } from 'next/font/google';
 import './globals.css';
 import InsuranceAgencySchema from '@/components/seo/InsuranceAgencySchema';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Midland Associates Insurance Services | Auto, Home & Business Insurance in NJ',
@@ -72,7 +72,7 @@ export default function RootLayout({
         {/* SEO Schema Markup */}
         <InsuranceAgencySchema />
       </head>
-      <body className={inter.className}>
+      <body>
         {children}
       </body>
     </html>

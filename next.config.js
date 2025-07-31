@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  basePath: '/midland-insurance-website',
+  assetPrefix: '/midland-insurance-website',
   reactStrictMode: true,
   swcMinify: true,
   images: {
