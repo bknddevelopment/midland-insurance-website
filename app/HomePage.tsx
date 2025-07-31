@@ -32,38 +32,38 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { EXTERNAL_URLS } from '@/lib/constants/urls';
 import { getLinkProps } from '@/lib/utils/links';
 
-const constructionServices = [
+const insuranceServices = [
   {
-    icon: ShieldCheckIcon,
-    title: 'General Liability',
-    description: 'Comprehensive protection for bodily injury, property damage, and completed operations.',
-    href: '/services/construction-types/general-contractors'
+    icon: HomeIcon,
+    title: 'Personal Insurance',
+    description: 'Auto, home, condo, renters, and umbrella coverage to protect what matters most.',
+    href: '/personal'
   },
   {
-    icon: UserGroupIcon,
-    title: 'Workers Compensation',
-    description: 'Required coverage for employee injuries with competitive rates for all trades.',
-    href: '/services/trade-specific'
-  },
-  {
-    icon: TruckIcon,
-    title: 'Commercial Auto',
-    description: 'Fleet coverage for trucks, vans, and equipment transport vehicles.',
-    href: '/services/construction-types/commercial-construction'
+    icon: BuildingOfficeIcon,
+    title: 'Business Insurance',
+    description: 'General liability, property, workers comp, and commercial auto for all industries.',
+    href: '/business'
   },
   {
     icon: WrenchScrewdriverIcon,
-    title: 'Tools & Equipment',
-    description: 'Protect valuable tools and equipment from theft, damage, and breakdowns.',
-    href: '/services/trade-specific'
+    title: 'Construction Insurance',
+    description: 'Specialized coverage for contractors, builders, and construction trades.',
+    href: '/services/construction-types'
+  },
+  {
+    icon: ShieldCheckIcon,
+    title: 'Specialty Coverage',
+    description: 'Professional liability, cyber insurance, and industry-specific solutions.',
+    href: '/services'
   }
 ];
 
 const whyChooseUs = [
   {
-    title: 'Construction Specialists',
-    description: 'Over 30 years insuring Bergen County contractors. We understand your unique risks.',
-    icon: WrenchScrewdriverIcon
+    title: 'Local Expertise',
+    description: 'Over 30 years serving Bergen County families and businesses. We understand your unique needs.',
+    icon: UserGroupIcon
   },
   {
     title: 'Claims Advocacy',
@@ -72,7 +72,7 @@ const whyChooseUs = [
   },
   {
     title: '20+ Carriers',
-    description: 'Access to construction-focused insurers means better coverage and competitive rates.',
+    description: 'Access to top-rated insurance carriers means better coverage and competitive rates.',
     icon: BuildingOfficeIcon
   },
   {
@@ -88,7 +88,7 @@ const testimonials = [
     company: 'Martinez Construction LLC',
     trade: 'General Contractor',
     rating: 5,
-    text: 'Midland Associates saved us $15,000 annually while improving our coverage. They understand construction risks better than any other agency.',
+    text: 'Midland Associates saved us $15,000 annually while improving our coverage. They understand business risks better than any other agency.',
     highlight: true
   },
   {
@@ -107,21 +107,9 @@ const testimonials = [
   }
 ];
 
-const tradeSpecialties = [
-  'General Contractors',
-  'Electrical',
-  'Plumbing',
-  'HVAC',
-  'Roofing',
-  'Concrete',
-  'Painting',
-  'Flooring',
-  'Landscaping',
-  'Excavation'
-];
 
 const stats = {
-  contractors: '500+',
+  clients: '2,000+',
   savings: '$12,000',
   claimsSuccess: '98%',
   yearsExperience: '30+'
@@ -136,18 +124,18 @@ export default function HomePage() {
       <div className="min-h-screen">
         <Navbar />
         
-        {/* Hero Section - Construction Focused */}
+        {/* Hero Section */}
         <Hero
-          title="Construction Insurance Specialists"
-          subtitle="Protecting Bergen County Contractors Since 1990"
-          description="Get comprehensive coverage from New Jersey's trusted construction insurance experts. General liability, workers comp, equipment coverage, and more. Quick quotes from 20+ carriers."
+          title="Your Trusted Insurance Partner"
+          subtitle="Protecting Bergen County Since 1990"
+          description="Get comprehensive coverage from New Jersey's trusted insurance experts. Personal, commercial, and specialty insurance solutions tailored to your needs. Quick quotes from 20+ carriers."
           primaryButton={{
-            text: 'Get Construction Quote',
+            text: 'Get Your Free Quote',
             href: EXTERNAL_URLS.QUOTE_FORM
           }}
           secondaryButton={{
-            text: 'View Coverage Options',
-            href: '/services/construction-types'
+            text: 'Explore Coverage Options',
+            href: '/services'
           }}
           backgroundImage="/images/consultation-background.jpg"
         />
@@ -159,8 +147,8 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <p className="text-4xl font-bold text-primary-600">{stats.contractors}</p>
-                <p className="text-gray-600 mt-1">Contractors Protected</p>
+                <p className="text-4xl font-bold text-primary-600">{stats.clients}</p>
+                <p className="text-gray-600 mt-1">Clients Protected</p>
               </div>
               <div>
                 <p className="text-4xl font-bold text-primary-600">{stats.savings}</p>
@@ -184,15 +172,15 @@ export default function HomePage() {
             <div className="text-center mb-16">
               <div className="badge-light inline-block mb-4">Specialized Coverage</div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Construction Insurance Solutions
+                Comprehensive Insurance Solutions
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive coverage designed specifically for construction contractors. From small renovations to large commercial projects.
+                Tailored coverage for individuals, families, and businesses. From personal protection to commercial ventures.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {constructionServices.map((service, index) => (
+              {insuranceServices.map((service, index) => (
                 <motion.div
                   key={service.title}
                   initial={{ opacity: 0, y: 30 }}
@@ -220,10 +208,10 @@ export default function HomePage() {
 
             <div className="text-center mt-12">
               <Link
-                href="/services/construction-types"
+                href="/services"
                 className="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors btn-transition"
               >
-                View All Construction Coverage
+                View All Coverage Options
                 <ArrowRightIcon className="ml-2 h-5 w-5" />
               </Link>
             </div>
@@ -232,56 +220,65 @@ export default function HomePage() {
 
         <Divider type="white-to-gray" />
 
-        {/* Trade Specialties */}
+        {/* Industry Expertise */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="badge-light inline-block mb-4">Expert Coverage</div>
                 <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                  Insurance for Every Trade
+                  Insurance for Every Industry
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  Whether you're a general contractor managing multiple subs or a specialty trade contractor, 
-                  we have the expertise and carrier relationships to protect your business properly.
+                  From contractors to healthcare professionals, retailers to restaurants, 
+                  we have the expertise and carrier relationships to protect your unique business.
                 </p>
                 
                 <div className="grid grid-cols-2 gap-4 mb-8">
-                  {tradeSpecialties.map((trade) => (
-                    <div key={trade} className="flex items-center">
+                  {[
+                    'Construction & Trades',
+                    'Healthcare & Medical',
+                    'Retail & Restaurants',
+                    'Professional Services',
+                    'Manufacturing',
+                    'Real Estate',
+                    'Technology',
+                    'Non-Profits'
+                  ].map((industry) => (
+                    <div key={industry} className="flex items-center">
                       <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2 flex-shrink-0" />
-                      <span className="text-gray-700">{trade}</span>
+                      <span className="text-gray-700">{industry}</span>
                     </div>
                   ))}
                 </div>
                 
                 <Link
-                  href="/services/trade-specific"
+                  href="/business"
                   className="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
                 >
-                  Find Your Trade Coverage
+                  Find Your Industry Coverage
                   <ArrowRightIcon className="ml-2 h-5 w-5" />
                 </Link>
               </div>
               
               <div className="bg-white rounded-lg shadow-lg p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Common Coverage Needs by Trade</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Coverage Tailored to Your Needs</h3>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">General Contractors</h4>
-                    <p className="text-sm text-gray-600">High GL limits, umbrella policies, builders risk</p>
+                    <h4 className="font-semibold text-gray-900 mb-2">Personal Lines</h4>
+                    <p className="text-sm text-gray-600">Home, auto, umbrella, life insurance, and more</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Electrical/Plumbing/HVAC</h4>
-                    <p className="text-sm text-gray-600">Professional liability, tools coverage, fleet insurance</p>
+                    <h4 className="font-semibold text-gray-900 mb-2">Small Business</h4>
+                    <p className="text-sm text-gray-600">General liability, property, workers comp, BOP</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Roofing Contractors</h4>
-                    <p className="text-sm text-gray-600">Completed operations, equipment coverage, high workers comp</p>
+                    <h4 className="font-semibold text-gray-900 mb-2">Commercial Lines</h4>
+                    <p className="text-sm text-gray-600">Complex risks, high limits, specialty coverage</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Excavation/Concrete</h4>
-                    <p className="text-sm text-gray-600">Heavy equipment insurance, pollution liability, bonds</p>
+                    <h4 className="font-semibold text-gray-900 mb-2">Employee Benefits</h4>
+                    <p className="text-sm text-gray-600">Group health, dental, vision, disability, and 401k</p>
                   </div>
                 </div>
               </div>
@@ -291,7 +288,7 @@ export default function HomePage() {
 
         <Divider type="gray-to-dark" />
 
-        {/* Why Choose Us - Construction Focus */}
+        {/* Why Choose Us */}
         <section className="py-20 bg-slate-900 circle-pattern">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -300,8 +297,8 @@ export default function HomePage() {
                 Bergen County's Construction Insurance Experts
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We're not just another insurance agency. We specialize in construction, 
-                understanding the unique risks and requirements of your industry.
+                We're not just another insurance agency. We provide personalized solutions, 
+                understanding the unique needs of Bergen County families and businesses.
               </p>
             </div>
 
@@ -388,9 +385,9 @@ export default function HomePage() {
                   Reduce Risk, Lower Premiums
                 </h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  Our free construction risk assessment helps identify coverage gaps and opportunities 
+                  Our free insurance review helps identify coverage gaps and opportunities 
                   to reduce your insurance costs. We'll review your current policies, analyze your 
-                  operations, and provide actionable recommendations.
+                  needs, and provide actionable recommendations.
                 </p>
                 <p className="text-lg text-gray-600 mb-8">
                   Many contractors save 20-40% on premiums after implementing our risk management strategies.
@@ -415,10 +412,10 @@ export default function HomePage() {
             <div className="text-center mb-16">
               <div className="badge-light inline-block mb-4">Success Stories</div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                What Contractors Say About Us
+                What Our Clients Say
               </h2>
               <p className="text-xl text-gray-600">
-                Real reviews from Bergen County construction professionals
+                Real reviews from Bergen County families and businesses
               </p>
             </div>
 
@@ -526,7 +523,7 @@ export default function HomePage() {
               Ready to Save on Construction Insurance?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Get competitive quotes from multiple carriers in minutes. Our construction insurance experts are standing by.
+              Get competitive quotes from multiple carriers in minutes. Our insurance experts are standing by.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
