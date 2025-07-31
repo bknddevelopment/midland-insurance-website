@@ -14,9 +14,12 @@ import {
   CreditCardIcon,
   ClipboardDocumentListIcon,
   ArrowRightIcon,
-  CurrencyDollarIcon
+  CurrencyDollarIcon,
+  WrenchScrewdriverIcon
 } from '@heroicons/react/24/outline';
 import { COMPANY_INFO, formatPhoneForTel } from '@/lib/utils/constants';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 import { 
   ShieldCheckIcon, 
   HomeIcon, 
@@ -29,7 +32,7 @@ import {
 const aboutPages = [
   { name: 'About Us', href: '/about' },
   { name: 'We\'re Independent', href: '/about/independent' },
-  { name: 'Insurance Tips', href: '/about/insurance-tips' },
+  { name: 'Insurance Tips', href: '/resources/insurance-tips' },
   { name: 'Refer Friends & Family', href: '/about/refer-friends' },
   { name: 'Leave A Review', href: '/about/leave-review' },
   { name: 'Request Quotes', href: '/quote' },
@@ -48,6 +51,7 @@ const personalCoverage = [
   { name: 'Life', href: '/personal/life', icon: UsersIcon },
   { name: 'Motorcycle', href: '/personal/motorcycle', icon: TruckIcon },
   { name: 'Travel Insurance', href: '/personal/travel', icon: ShieldCheckIcon },
+  { name: 'Umbrella Insurance', href: '/personal/umbrella', icon: ShieldCheckIcon },
   { name: 'All Personal Lines', href: '/personal', icon: UsersIcon },
 ];
 
@@ -68,6 +72,7 @@ const businessCoverage = [
   { name: 'Cyber Liability', href: '/business/cyber-liability', icon: ShieldCheckIcon },
   { name: 'Commercial Umbrella', href: '/business/commercial-umbrella', icon: ShieldCheckIcon },
   { name: 'Bonds', href: '/business/bonds', icon: DocumentTextIcon },
+  { name: 'Contractors Insurance', href: '/business/contractors', icon: WrenchScrewdriverIcon },
   { name: 'All Business Lines', href: '/business', icon: BuildingOfficeIcon },
 ];
 
@@ -614,9 +619,10 @@ export default function Navbar() {
               {/* Fixed Bottom CTA */}
               <div className="absolute bottom-0 left-0 right-0 border-t border-gray-200 bg-white p-4">
                 <Link
-                  href="/quote"
+                  href={EXTERNAL_URLS.QUOTE_FORM}
                   className="block w-full rounded-lg bg-primary-600 px-6 py-3 text-center font-semibold text-white shadow-lg hover:bg-primary-700 transition-all duration-200 transform hover:scale-[1.02]"
                   onClick={() => setIsMobileMenuOpen(false)}
+                  {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
                 >
                   Get Free Quote
                 </Link>

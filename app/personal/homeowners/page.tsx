@@ -20,6 +20,8 @@ import {
   UserGroupIcon,
   CurrencyDollarIcon
 } from '@heroicons/react/24/outline';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 const coverageTypes = [
   {
@@ -225,8 +227,9 @@ export default function HomeownersInsurance() {
 
           <div className="text-center mt-12">
             <Link
-              href="/quote"
+              href={EXTERNAL_URLS.QUOTE_FORM}
               className="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors btn-transition"
+              {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
             >
               Get Your Home Quote
               <ArrowRightIcon className="ml-2 h-5 w-5" />
@@ -330,8 +333,9 @@ export default function HomeownersInsurance() {
               Call (201) 812-2184
             </Link>
             <Link
-              href="/quote"
+              href={EXTERNAL_URLS.QUOTE_FORM}
               className="inline-flex items-center px-8 py-4 border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-slate-900 transition-colors btn-transition"
+              {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
             >
               Get Home Quote
               <ArrowRightIcon className="ml-2 h-5 w-5" />

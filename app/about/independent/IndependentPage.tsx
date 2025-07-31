@@ -19,6 +19,8 @@ import {
 } from '@heroicons/react/24/outline';
 import InsuranceAgencySchema from '@/components/seo/InsuranceAgencySchema';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 export default function IndependentPage() {
   const breadcrumbItems = [
@@ -307,8 +309,9 @@ export default function IndependentPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/quote"
+                href={EXTERNAL_URLS.QUOTE_FORM}
                 className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-semibold rounded-md text-primary-600 bg-white hover:bg-gray-100 transition-colors"
+                {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
               >
                 Get Independent Quote
                 <ArrowRightIcon className="h-5 w-5 ml-2" />

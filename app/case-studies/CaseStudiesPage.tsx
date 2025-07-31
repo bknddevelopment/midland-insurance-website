@@ -17,6 +17,8 @@ import {
 } from '@heroicons/react/24/outline';
 import InsuranceAgencySchema from '@/components/seo/InsuranceAgencySchema';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 interface CaseStudy {
   id: string;
@@ -198,7 +200,7 @@ export default function CaseStudiesPage() {
           description="See how we\'ve helped Bergen County construction companies overcome insurance challenges and achieve their business goals."
           primaryButton={{
             text: 'Get Your Solution',
-            href: '/quote',
+            href: EXTERNAL_URLS.QUOTE_FORM,
           }}
           secondaryButton={{
             text: 'Read Testimonials',

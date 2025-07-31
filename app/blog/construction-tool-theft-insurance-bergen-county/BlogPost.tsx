@@ -10,6 +10,8 @@ import { motion } from 'framer-motion';
 import FAQSchema from '@/components/seo/FAQSchema';
 import ArticleSchema from '@/components/seo/ArticleSchema';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 export default function BlogPost() {
   const publishDate = '2025-01-30';
@@ -536,8 +538,9 @@ export default function BlogPost() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/quote"
+                  href={EXTERNAL_URLS.QUOTE_FORM}
                   className="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+                  {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
                 >
                   <ShieldCheckIcon className="h-5 w-5 mr-2" />
                   Get Equipment Coverage Quote

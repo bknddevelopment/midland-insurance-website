@@ -21,6 +21,8 @@ import {
   CurrencyDollarIcon,
   UserGroupIcon
 } from '@heroicons/react/24/outline';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 const remodelingServices = [
   {
@@ -169,7 +171,7 @@ export default function InteriorRemodeling() {
         description="From kitchen and bathroom renovations to whole-home remodeling, we bring your vision to life with expert craftsmanship and attention to detail."
         primaryButton={{
           text: 'Get Free Consultation',
-          href: '/quote'
+          href: EXTERNAL_URLS.QUOTE_FORM
         }}
         secondaryButton={{
           text: 'Call Now',
@@ -354,8 +356,9 @@ export default function InteriorRemodeling() {
               Call (201) 812-2184
             </Link>
             <Link
-              href="/quote"
+              href={EXTERNAL_URLS.QUOTE_FORM}
               className="inline-flex items-center px-8 py-4 border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-slate-900 transition-colors btn-transition"
+              {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
             >
               Schedule Consultation
               <ArrowRightIcon className="ml-2 h-5 w-5" />

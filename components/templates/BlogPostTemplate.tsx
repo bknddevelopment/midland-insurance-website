@@ -14,6 +14,8 @@ import {
 import Link from 'next/link';
 import InsuranceAgencySchema from '@/components/seo/InsuranceAgencySchema';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 interface BlogPostTemplateProps {
   title: string;
@@ -106,8 +108,9 @@ export default function BlogPostTemplate({
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
-                href="/quote"
+                href={EXTERNAL_URLS.QUOTE_FORM}
                 className="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+                {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
               >
                 Get Free Quote
                 <ArrowRightIcon className="ml-2 h-5 w-5" />

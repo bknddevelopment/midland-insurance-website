@@ -21,6 +21,8 @@ import {
 import Link from 'next/link';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 interface NearbyArea {
   name: string;
@@ -371,8 +373,9 @@ export default function LocationPageTemplate({
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Link
-                href="/quote"
+                href={EXTERNAL_URLS.QUOTE_FORM}
                 className="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors btn-transition"
+                {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
               >
                 Get Free Quote
                 <ArrowRightIcon className="ml-2 h-5 w-5" />

@@ -23,6 +23,8 @@ import Link from 'next/link';
 import FAQSchema from '@/components/seo/FAQSchema';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import ServiceSchema from '@/components/seo/ServiceSchema';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 interface FAQ {
   question: string;
@@ -326,8 +328,9 @@ export default function ConstructionServiceTemplate({
                       Get an accurate quote based on your specific needs
                     </p>
                     <Link
-                      href="/quote"
+                      href={EXTERNAL_URLS.QUOTE_FORM}
                       className="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+                      {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
                     >
                       Get Custom Quote
                       <ArrowRightIcon className="ml-2 h-5 w-5" />
@@ -465,8 +468,9 @@ export default function ConstructionServiceTemplate({
               </p>
               <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <Link
-                  href="/quote"
+                  href={EXTERNAL_URLS.QUOTE_FORM}
                   className="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                  {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
                 >
                   Get Free Quote
                   <ArrowRightIcon className="ml-2 h-5 w-5" />

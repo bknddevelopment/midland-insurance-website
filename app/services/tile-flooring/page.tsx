@@ -19,6 +19,8 @@ import {
   ShieldCheckIcon,
   CurrencyDollarIcon
 } from '@heroicons/react/24/outline';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 const flooringTypes = [
   {
@@ -171,7 +173,7 @@ export default function TileFlooring() {
         description="Expert installation of tile, hardwood, luxury vinyl, and more. Quality materials, professional installation, and competitive pricing for every room in your home."
         primaryButton={{
           text: 'Get Free Estimate',
-          href: '/quote'
+          href: EXTERNAL_URLS.QUOTE_FORM
         }}
         secondaryButton={{
           text: 'Call Now',
@@ -355,8 +357,9 @@ export default function TileFlooring() {
               Call (201) 812-2184
             </Link>
             <Link
-              href="/quote"
+              href={EXTERNAL_URLS.QUOTE_FORM}
               className="inline-flex items-center px-8 py-4 border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-slate-900 transition-colors btn-transition"
+              {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
             >
               Get Free Estimate
               <ArrowRightIcon className="ml-2 h-5 w-5" />

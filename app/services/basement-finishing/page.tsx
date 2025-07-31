@@ -22,6 +22,8 @@ import {
   ClockIcon,
   CurrencyDollarIcon
 } from '@heroicons/react/24/outline';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 const basementTypes = [
   {
@@ -170,7 +172,7 @@ export default function BasementFinishing() {
         description="Convert your unfinished basement into beautiful, functional living space. From entertainment rooms to home offices, we create custom basement solutions that add value and enjoyment to your home."
         primaryButton={{
           text: 'Get Free Estimate',
-          href: '/quote'
+          href: EXTERNAL_URLS.QUOTE_FORM
         }}
         secondaryButton={{
           text: 'Call Now',
@@ -355,8 +357,9 @@ export default function BasementFinishing() {
               Call (201) 812-2184
             </Link>
             <Link
-              href="/quote"
+              href={EXTERNAL_URLS.QUOTE_FORM}
               className="inline-flex items-center px-8 py-4 border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-slate-900 transition-colors btn-transition"
+              {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
             >
               Get Free Estimate
               <ArrowRightIcon className="ml-2 h-5 w-5" />

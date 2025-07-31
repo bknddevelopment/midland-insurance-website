@@ -16,6 +16,8 @@ import {
   ArrowDownTrayIcon
 } from '@heroicons/react/24/outline';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 // Premium rate data based on trade and size
 const premiumRates = {
@@ -572,8 +574,9 @@ Contact Midland Associates at (201) 812-2184 for a formal quote.
                         Download Estimate
                       </button>
                       <Link
-                        href="/quote"
+                        href={EXTERNAL_URLS.QUOTE_FORM}
                         className="flex-1 text-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+                        {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
                       >
                         Get Actual Quote
                       </Link>

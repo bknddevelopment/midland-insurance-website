@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
 import ParallaxBackground from './ParallaxBackground';
+import { getLinkProps, isExternalUrl } from '@/lib/utils/links';
 
 interface HeroProps {
   title: string;
@@ -56,6 +57,7 @@ export default function Hero({
             <Link
               href={primaryButton.href}
               className="inline-flex items-center justify-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors btn-transition"
+              {...getLinkProps(primaryButton.href)}
             >
               {primaryButton.text}
               <ArrowRightIcon className="ml-2 h-5 w-5" />
@@ -65,6 +67,7 @@ export default function Hero({
               <Link
                 href={secondaryButton.href}
                 className="inline-flex items-center justify-center px-8 py-4 border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-slate-900 transition-colors btn-transition"
+                {...getLinkProps(secondaryButton.href)}
               >
                 {secondaryButton.text}
               </Link>

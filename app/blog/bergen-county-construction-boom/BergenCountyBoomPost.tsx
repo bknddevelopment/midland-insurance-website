@@ -11,6 +11,8 @@ import {
   TruckIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 export default function BergenCountyBoomPost() {
   const content = (
@@ -292,8 +294,9 @@ export default function BergenCountyBoomPost() {
           Ensure your insurance coverage matches the opportunities. We specialize in coverage for contractors working on major Bergen County projects.
         </p>
         <Link
-          href="/quote"
+          href={EXTERNAL_URLS.QUOTE_FORM}
           className="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+          {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
         >
           Get Project-Ready Coverage
         </Link>

@@ -29,6 +29,8 @@ import {
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 import InsuranceAgencySchema from '@/components/seo/InsuranceAgencySchema';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 const constructionServices = [
   {
@@ -141,13 +143,13 @@ export default function HomePage() {
           description="Get comprehensive coverage from New Jersey's trusted construction insurance experts. General liability, workers comp, equipment coverage, and more. Quick quotes from 20+ carriers."
           primaryButton={{
             text: 'Get Construction Quote',
-            href: '/quote'
+            href: EXTERNAL_URLS.QUOTE_FORM
           }}
           secondaryButton={{
             text: 'View Coverage Options',
             href: '/services/construction-types'
           }}
-          backgroundImage="/photos/construction-hero.jpg"
+          backgroundImage="/images/consultation-background.jpg"
         />
 
         <Divider type="dark-to-white" />
@@ -528,8 +530,9 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
-                href="/quote"
+                href={EXTERNAL_URLS.QUOTE_FORM}
                 className="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors text-lg"
+                {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
               >
                 Get Your Free Quote
                 <ArrowRightIcon className="ml-2 h-5 w-5" />

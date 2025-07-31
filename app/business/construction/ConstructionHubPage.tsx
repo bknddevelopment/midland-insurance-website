@@ -23,6 +23,8 @@ import {
 import Link from 'next/link';
 import InsuranceAgencySchema from '@/components/seo/InsuranceAgencySchema';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import { EXTERNAL_URLS } from '@/lib/constants/urls';
+import { getLinkProps } from '@/lib/utils/links';
 
 const services = [
   {
@@ -149,7 +151,7 @@ export default function ConstructionHubPage() {
           description="Comprehensive insurance solutions for construction professionals. From general liability to builders risk, we have the coverage you need at competitive rates."
           primaryButton={{
             text: 'Get Free Quote',
-            href: '/quote',
+            href: EXTERNAL_URLS.QUOTE_FORM,
           }}
           secondaryButton={{
             text: 'Call (201) 812-2184',
@@ -431,8 +433,9 @@ export default function ConstructionHubPage() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Link
-                href="/quote"
+                href={EXTERNAL_URLS.QUOTE_FORM}
                 className="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors btn-transition"
+                {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
               >
                 Get Free Quote
                 <ArrowRightIcon className="ml-2 h-5 w-5" />
