@@ -8,6 +8,7 @@ import {
   ClockIcon,
   StarIcon
 } from '@heroicons/react/24/outline';
+import { getImagePath } from '@/utils/getBasePath';
 
 const personalServices = [
   { name: 'Auto Insurance', href: '/personal/auto' },
@@ -46,7 +47,7 @@ export default function Footer() {
           <div className="flex-shrink-0">
             <div className="flex items-center mb-8">
               <Image 
-                src="/photos/logo/PNG_Transparent_High-Resolution_300-_Dpi-002.webp" 
+                src={getImagePath("/photos/logo/PNG_Transparent_High-Resolution_300-_Dpi-002.webp")} 
                 alt="Midland Associates Insurance" 
                 width={180} 
                 height={180} 

@@ -18,6 +18,7 @@ import {
   WrenchScrewdriverIcon
 } from '@heroicons/react/24/outline';
 import { COMPANY_INFO, formatPhoneForTel } from '@/lib/utils/constants';
+import { getImagePath } from '@/utils/getBasePath';
 import { EXTERNAL_URLS } from '@/lib/constants/urls';
 import { getLinkProps } from '@/lib/utils/links';
 import { 
@@ -231,7 +232,7 @@ export default function Navbar() {
             <div className="flex items-center">
               <Link href="/">
                 <Image 
-                  src="/photos/logo/PNG_Transparent_High-Resolution_300-_Dpi-002.webp" 
+                  src={getImagePath("/photos/logo/PNG_Transparent_High-Resolution_300-_Dpi-002.webp")} 
                   alt="Midland Associates Insurance" 
                   width={180} 
                   height={80} 
@@ -468,7 +469,7 @@ export default function Navbar() {
               {/* Header */}
               <div className="flex items-center justify-between border-b border-gray-200 px-6 py-4">
                 <Image
-                  src="/photos/logo/PNG_Transparent_High-Resolution_300-_Dpi-002.webp"
+                  src={getImagePath("/photos/logo/PNG_Transparent_High-Resolution_300-_Dpi-002.webp")}
                   alt="Midland Associates Insurance"
                   width={120}
                   height={40}
