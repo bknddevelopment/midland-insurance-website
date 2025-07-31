@@ -20,7 +20,8 @@ import {
   UserGroupIcon,
   HomeIcon,
   TruckIcon,
-  BuildingOfficeIcon
+  BuildingOfficeIcon,
+  CalculatorIcon
 } from '@heroicons/react/24/outline';
 import { EXTERNAL_URLS } from '@/lib/constants/urls';
 import { getLinkProps } from '@/lib/utils/links';
