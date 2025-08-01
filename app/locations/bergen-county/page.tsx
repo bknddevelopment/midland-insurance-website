@@ -2,18 +2,18 @@ import BergenCountyPage from './BergenCountyPage';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Construction Insurance Bergen County NJ | Contractor Coverage | Midland',
-  description: 'Local construction insurance throughout Bergen County, NJ. Serving Hackensack, Fort Lee, Paramus, Ridgewood, and all 70 municipalities. Get quotes today.',
-  keywords: 'bergen county construction insurance, contractor insurance bergen county nj, bergen county builders insurance, commercial construction insurance bergen',
+  title: 'Bergen County Auto Insurance | Car Insurance Bergen County NJ | Midland',
+  description: 'Affordable auto insurance throughout Bergen County, NJ. Serving all 70 municipalities including Hackensack, Fort Lee, Paramus, and Ridgewood. Get quotes today.',
+  keywords: 'bergen county auto insurance, car insurance bergen county nj, bergen county car insurance, auto insurance bergen county, cheap car insurance bergen county',
   openGraph: {
-    title: 'Construction Insurance Bergen County NJ | Local Coverage',
-    description: 'Trusted construction insurance agency serving all of Bergen County since 1990. Local expertise, competitive rates, same-day certificates.',
+    title: 'Auto Insurance Bergen County NJ | 70 Towns Covered',
+    description: 'Trusted auto insurance agency serving all of Bergen County. Local expertise, competitive rates, and personalized service since 1989.',
     url: 'https://midlandinsurance.biz/locations/bergen-county',
     images: [{
-      url: '/og/bergen-county-construction.jpg',
+      url: '/og/bergen-county-auto-insurance.jpg',
       width: 1200,
       height: 630,
-      alt: 'Construction Insurance Bergen County'
+      alt: 'Auto Insurance Bergen County NJ'
     }]
   },
   alternates: {

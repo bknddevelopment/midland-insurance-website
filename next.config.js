@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   output: 'export',
-  basePath: '/midland-insurance-website',
-  assetPrefix: '/midland-insurance-website',
+  basePath: isProd ? '/midland-insurance-website' : '',
+  assetPrefix: isProd ? '/midland-insurance-website' : '',
   reactStrictMode: true,
   swcMinify: true,
   images: {
@@ -18,27 +20,6 @@ const nextConfig = {
       },
     ],
     formats: ['image/webp', 'image/avif'],
-  },
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
-          },
-        ],
-      },
-    ];
   },
 };
 

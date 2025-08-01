@@ -21,27 +21,44 @@ import {
 import { EXTERNAL_URLS } from '@/lib/constants/urls';
 import { getLinkProps } from '@/lib/utils/links';
 
+const constructionServices = [
+  {
+    icon: BuildingOfficeIcon,
+    title: 'Construction Types',
+    description: 'Specialized insurance for all types of construction projects from commercial buildings to residential homes.',
+    features: ['Commercial Projects', 'Residential Construction', 'Industrial Buildings', 'Infrastructure'],
+    href: '/services/construction-types'
+  },
+  {
+    icon: UserGroupIcon,
+    title: 'Trade Specific',
+    description: 'Tailored insurance coverage for specific construction trades and contractors.',
+    features: ['General Contractors', 'Electrical Contractors', 'Plumbing Contractors', 'HVAC Contractors'],
+    href: '/services/trade-specific'
+  }
+];
+
 const personalServices = [
   {
     icon: TruckIcon,
     title: 'Auto Insurance',
     description: 'Comprehensive coverage for your vehicle including liability, collision, and comprehensive protection.',
     features: ['Liability Coverage', 'Collision Coverage', 'Comprehensive Coverage', 'Uninsured Motorist'],
-    href: '/services/auto-insurance'
+    href: '/personal/auto'
   },
   {
     icon: HomeIcon,
     title: 'Homeowners Insurance',
     description: 'Protect your home and personal belongings with comprehensive homeowners coverage.',
     features: ['Dwelling Coverage', 'Personal Property', 'Liability Protection', 'Additional Living Expenses'],
-    href: '/services/homeowners-insurance'
+    href: '/personal/homeowners'
   },
   {
     icon: BuildingOfficeIcon,
     title: 'Condo Insurance',
     description: 'Specialized coverage for condominium owners protecting your unit and personal property.',
     features: ['Unit Coverage', 'Personal Property', 'Liability Protection', 'Loss Assessment'],
-    href: '/services/condo-insurance'
+    href: '/personal/condo'
   },
   {
     icon: UserGroupIcon,
@@ -55,14 +72,14 @@ const personalServices = [
     title: 'Boat Insurance',
     description: 'Comprehensive marine coverage for your watercraft and boating activities.',
     features: ['Hull Coverage', 'Liability Protection', 'Medical Payments', 'Uninsured Boaters'],
-    href: '/services/boat-insurance'
+    href: '/personal/boat'
   },
   {
     icon: TruckIcon,
     title: 'Classic Auto Insurance',
     description: 'Specialized coverage for classic, antique, and collector vehicles.',
     features: ['Agreed Value Coverage', 'Restoration Coverage', 'Spare Parts Coverage', 'Show Coverage'],
-    href: '/services/classic-auto-insurance'
+    href: '/personal/classic-auto'
   }
 ];
 
@@ -193,21 +210,21 @@ export default function Services() {
       {/* 2. Divider */}
       <Divider type="dark-to-white" />
 
-      {/* 3. First White Section - Personal Insurance */}
+      {/* 3. First White Section - Construction Services */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="badge-light inline-block mb-4">Personal Insurance</div>
+            <div className="badge-light inline-block mb-4">Construction Insurance</div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Protect What Matters Most
+              Specialized Construction Coverage
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive personal insurance solutions designed to protect your family, home, and assets with competitive rates and exceptional service.
+              Comprehensive insurance solutions for construction projects and contractors. From commercial buildings to residential homes, we protect your business every step of the way.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {personalServices.map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {constructionServices.map((service, index) => (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 30 }}
@@ -234,22 +251,11 @@ export default function Services() {
                   href={service.href}
                   className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
                 >
-                  Learn More
+                  Explore Coverage
                   <ArrowRightIcon className="ml-1 h-4 w-4" />
                 </Link>
               </motion.div>
             ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href={EXTERNAL_URLS.QUOTE_FORM}
-              className="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors btn-transition"
-              {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
-            >
-              Get Personal Insurance Quote
-              <ArrowRightIcon className="ml-2 h-5 w-5" />
-            </Link>
           </div>
         </div>
       </section>
@@ -257,21 +263,21 @@ export default function Services() {
       {/* 4. Divider */}
       <Divider type="white-to-dark" />
 
-      {/* 5. Dark Section - Business Insurance */}
+      {/* 5. Dark Section - Personal Insurance */}
       <section className="py-20 bg-slate-900 circle-pattern">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="badge-light inline-block mb-4">Business Insurance</div>
+            <div className="badge-light inline-block mb-4">Personal Insurance</div>
             <h2 className="text-4xl font-bold text-white mb-6">
-              Protect Your Business
+              Protect What Matters Most
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive business insurance solutions to protect your company, employees, and assets from unexpected risks.
+              Comprehensive personal insurance solutions designed to protect your family, home, and assets with competitive rates and exceptional service.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {businessServices.map((service, index) => (
+            {personalServices.map((service, index) => (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 30 }}
@@ -297,6 +303,70 @@ export default function Services() {
                 <Link
                   href={service.href}
                   className="inline-flex items-center text-primary-400 hover:text-primary-300 font-medium"
+                >
+                  Learn More
+                  <ArrowRightIcon className="ml-1 h-4 w-4" />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href={EXTERNAL_URLS.QUOTE_FORM}
+              className="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors btn-transition"
+              {...getLinkProps(EXTERNAL_URLS.QUOTE_FORM)}
+            >
+              Get Personal Insurance Quote
+              <ArrowRightIcon className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Divider */}
+      <Divider type="dark-to-white" />
+
+      {/* 7. White Section - Business Insurance */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="badge-light inline-block mb-4">Business Insurance</div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Protect Your Business
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive business insurance solutions to protect your company, employees, and assets from unexpected risks.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {businessServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="card"
+              >
+                <service.icon className="h-12 w-12 text-primary-600 mb-4" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  {service.description}
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-sm text-gray-600">
+                      <CheckCircleIcon className="h-4 w-4 text-green-500 mr-2" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={service.href}
+                  className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
                 >
                   Learn More
                   <ArrowRightIcon className="ml-1 h-4 w-4" />
